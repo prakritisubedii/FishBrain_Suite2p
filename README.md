@@ -250,17 +250,17 @@ Each folder contains:
 ## Completed Runs on the Machine
 
 ### Default parameters (run1) — all 4 valid sessions
-| Session | Cells detected | Notes |
-|---------|---------------|-------|
-| 145544 | 4,491 | Quiet after initial onset |
-| 164302 | 5,208 | Rich activity throughout |
-| 164628 | 4,512 | Quiet after initial onset |
-| 165925 | 3,602 | Primary benchmark session |
+| Session | Cells detected | Run time | Notes |
+|---------|---------------|----------|-------|
+| 145544 | 4,491 | ~39 min | Quiet after initial onset |
+| 164302 | 5,208 | ~39 min | Rich activity throughout |
+| 164628 | 4,512 | ~39 min | Quiet after initial onset |
+| 165925 | 3,602 | ~39 min | Primary benchmark session |
 
 ### Tuned parameters (run3) — session 165925
-| Session | Cells detected | Optuna score |
-|---------|---------------|-------------|
-| 165925 | ~10,900 | 10,932 |
+| Session | Cells detected | Optuna score | Run time |
+|---------|---------------|-------------|----------|
+| 165925 | ~10,900 | 10,932 | ~44 min |
 
 ---
 

@@ -38,7 +38,6 @@ This repo contains the suite2p side of a zebrafish calcium imaging analysis proj
 ## Machine & Environment
 
 - **GPU machine:** `abl-workstation2`, 2× NVIDIA RTX A6000, CUDA 12.8
-- **Access:** AnyDesk
 - **Conda environment:** `suite2p` (Python 3.10, suite2p 1.1.0)
 
 > ⚠️ **Important:** NumPy must stay at version 1.26.4. Do NOT upgrade it. NumPy 2.x breaks suite2p's cell detection code (sparsedetect.py) silently.
@@ -133,12 +132,6 @@ Key files produced per imaging plane:
 - `iscell.npy` — classifier decision: column 0 = is it a cell (1/0), column 1 = confidence score
 - `col_medians.npy` — the stripe removal reference values (needed if you run Optuna later)
 
-> **Tip:** Use `screen` for this — each run takes ~45 minutes. If your terminal closes, a screen session keeps running:
-> ```bash
-> screen -S suite2p_run
-> # run the script, then Ctrl+A D to detach
-> screen -r suite2p_run  # to reattach later
-> ```
 
 ---
 
@@ -219,7 +212,6 @@ Outputs go to: `<run_folder>/postprocessing/rolling_prctile_win40_pct8/`
 - `cell_roi_idx.npy` — index of each cell within its plane
 - Per-plane trace plots and a population average plot (PNGs)
 
-> **Known quirk:** 3 out of 7,545 cells in the tuned session 165925 run have extreme dF/F values (up to ~91) because their baseline is nearly zero. This affects 0.04% of cells and is not a pipeline problem. Clip dF/F at ±5.0 for downstream analysis.
 
 ---
 

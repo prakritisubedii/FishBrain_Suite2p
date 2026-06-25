@@ -145,7 +145,7 @@ Suite2p has settings that control how aggressively it detects cells. These were 
 | `max_overlap` | **0.810** | 0.75 | How much two cells can overlap before one is removed |
 | `highpass_time` | **91** | 100 | High-pass filter cutoff in frames |
 
-These come from Trial 32 of the v2 Optuna study and improved detection from 3,602 cells to ~10,900 cells on session 165925 — roughly a 3× improvement.
+These come from Trial 32 of the v2 Optuna study and improved detection from 3,602 cells to ~10,045 cells on session 165925 — roughly a 3× improvement.
 
 The key insight: **`threshold_scaling` is by far the most important parameter.** Scores drop sharply as it increases above ~0.75. The sweet spot is 0.30–0.35.
 
@@ -224,7 +224,7 @@ The `results_summary/` folder contains PNG plots from completed runs so you can 
 | Run | Parameters | Cells detected |
 |-----|-----------|---------------|
 | `run1` — default | threshold_scaling=1.0 | 3,602 |
-| `run3` — tuned | threshold_scaling=0.303 | ~10,900 |
+| `run3` — tuned | threshold_scaling=0.303 | ~10,045 |
 
 The cell location plots show clearly how many more neurons are detected after tuning.
 
@@ -260,7 +260,7 @@ Each folder contains:
 ### Tuned parameters (run3) — session 165925
 | Session | Cells detected | Optuna score | Run time |
 |---------|---------------|-------------|----------|
-| 165925 | ~10,900 | 10,932 | ~44 min |
+| 165925 | ~10,045 | 10,932 | ~47 min |
 
 ---
 
